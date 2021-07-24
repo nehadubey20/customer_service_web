@@ -1,9 +1,16 @@
-<small *ngIf='invalidLogin'>{{errorMessage}}</small>
+<BR>
+<h1>Login</h1>
+<div class="container">
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}
+    <br>
+  </div>
 
-<div>
-  <!-- 2 way data binding -->
-  Username: <input type="text" name="username" [(ngModel)]="username" />
-  Password: <input type="password" name="password" [(ngModel)]="password" /><br /><br />
+  <div>
+    <!-- 2 way data binding -->
+    Username: <input type="text" name="username" [(ngModel)]="username" /><br /><br />
+    Password: <input type="password" name="password" [(ngModel)]="password" /><br /><br />
+  </div>
+
+  <!-- username : {{username}}  Ajaxifying-->
+  <button (click)=handelLogin() class="btn btn-success">Login</button>
 </div>
-<!-- username : {{username}}  Ajaxifying-->
-<button (click)=handelLogin()>Login</button>
